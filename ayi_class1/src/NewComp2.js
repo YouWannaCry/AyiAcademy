@@ -4,7 +4,7 @@ import NewComp3 from './NewComp3'
 export default function NewComp2(){
     return (
         <div>
-            This is also a new comp, but this one is different. And it also calls a third one
+            Este tambien es un nuevo componente, pero este es diferente. Y ademas, llama a un tercer componente.
             <NewComp3/>
         </div>
     )

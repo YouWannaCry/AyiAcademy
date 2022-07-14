@@ -4,7 +4,7 @@ import cat from "./cat.jpg"
 export default function NewComp3() {
   return (
     <div>
-      Here is a cat for you :D
+      Toma una foto de un gatito :D
       <div>
       <img src={cat}/>
       </div>
