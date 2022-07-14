@@ -1,5 +1,5 @@
 import React from 'react'
-import cat from "./cat.jpg"
+import cat from "../assets/cat.jpg"
 
 export default function NewComp3() {
   return (

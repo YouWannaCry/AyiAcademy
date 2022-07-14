@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
-import NewComp1 from './NewComp1';
-import NewComp2 from './NewComp2';
+import NewComp1 from './comps/NewComp1';
+import NewComp2 from './comps/NewComp2';
 
 function App() {
   return (
