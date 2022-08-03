@@ -6,6 +6,7 @@ function NewForm() {
     const [name, setname] = useState()
     const [surname, setsurname] = useState()
     const [mail, setmail] = useState()
+    const [phone, setphone] = useState()
 
   return (
     <form>
