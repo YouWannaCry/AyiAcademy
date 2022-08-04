@@ -1,37 +1,31 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getCharacters, setCharacters } from "./store/slices/rickandmorty";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import  {Home} from "../src/components/Home"
+import  {Characters} from "../src/components/Characters"
+import  Modal from "../src/components/Modal"
+import  About from "../src/components/About"
+import ResponsiveAppBar  from "./components/visualComps/AppBar"
 
 export const rnm = () => {
 
-  const dispatch = useDispatch();
-  const { isLoading, page, characters } = useSelector( state => state.rnm)
-
-  useEffect(() => {
-    dispatch( getCharacters(page) );
-  }, [page])
-  
   return (
     <>
-      <h1>Rick and Morty</h1>
-      <hr />
-      <span>Loading: { isLoading ? 'True': 'False' } </span>
-
-      <ul>
-        {
-        characters && characters.map( ({ id, name }) => ( 
-          <li key= { id }> { name } </li>
-        ))
-        }
-      </ul>
-      <button type="button"
-      disabled = { isLoading }
-      onClick = { () => dispatch( setCharacters({page: page + 1}) )}
-      >  
-        Next
-      </button>
+      <BrowserRouter>
+        <ResponsiveAppBar/>
+          <Routes>
+            <Route path = "/" element = {<Home/>} />
+            <Route path = "/about" element = {<About/>} />
+            <Route path = "/characters" element = {<Characters/>} />
+            <Route path = "/characters/:id" element = {<Modal/>} />
+          </Routes>
+      </BrowserRouter>
     </>
   )
-}
+} 
 
 export default rnm
+
+
+{/* <h1>Rick and Morty</h1>
+
+      
+       */}
