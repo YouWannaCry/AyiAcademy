@@ -1,18 +1,27 @@
 import { characterApi } from "../../../api/rnmapi"
-import { setCharacters, startLoadingCharacters } from "./rnmSlice"
+import { setCharacters, startLoadingCharacters, setCharacter } from "./rnmSlice"
 
 export const getCharacters = ( page = 1 ) => {
     return async( dispatch, getState ) => {
         dispatch( startLoadingCharacters() );
 
-        // const resp = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
-        // const data = await resp.json();
-        // console.log(data);
-
         const { data } = await characterApi.get(`character/?page=${page}`)
-        console.log(data);
 
         dispatch( setCharacters({ characters: data.results, page}));
+    }
+    
+}
+export const getCharacter = ( id ) => {
+    return async( dispatch, getState ) => {
+        dispatch( startLoadingCharacters() );
+        
+        // const { data } = await characterApi.get(`character/${id}`)
 
+        const  data  = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+
+        console.log("Asi llega axios", data);
+
+        dispatch( setCharacter({ character: data}));
+        
     }
 }

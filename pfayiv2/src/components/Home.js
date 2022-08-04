@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import rnm from "./img/rnm.jpg"
 
-export const Home = () => {
+export function Home() {
   return (
-    <div>Home</div>
-  )
+    <img src={rnm} width="1765" height="882"/>
+  );
 }

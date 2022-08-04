@@ -1,4 +1,3 @@
-import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -29,7 +28,7 @@ function Copyright() {
 
 const theme = createTheme();
 
-export default function Album() {
+export const Album = () => {
     const dispatch = useDispatch();
     const { isLoading, page, characters } = useSelector( state => state.rnm)
     console.log("Estos son los personajes", characters);
@@ -40,14 +39,13 @@ export default function Album() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
       <main>
         {/* Hero unit */}
-        <Container sx={{ py: 8 }} maxWidth="md">
+        <Container sx={{ py: 2 }} maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={4}>
+          <Grid container spacing={2}>
             {characters.map((character) => (
-              <Grid item key={character.id} xs={12} sm={6} md={4}>
+              <Grid item key={character.id} xs={12} sm={6} md={3}>
                 <MediaCard character = {character} />
               </Grid>
             ))}

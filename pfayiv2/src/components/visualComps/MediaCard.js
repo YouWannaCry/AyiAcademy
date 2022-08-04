@@ -15,8 +15,6 @@ export default function MediaCard({character}) {
                   <CardMedia
                     component="img"
                     sx={{
-                      // 16:9
-                      pt: '56.25%',
                     }}
                     image={character.image}
                     alt="random"
@@ -36,7 +34,7 @@ export default function MediaCard({character}) {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Link to={`/characters:${id}`}>
+                    <Link to={`/character/${character.id}`}>
                       <Button size="small">View</Button>
                     </Link>
                     <Button size="small">Edit</Button>

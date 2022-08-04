@@ -3,9 +3,10 @@ import { createSlice } from '@reduxjs/toolkit'
 export const rnmSlice = createSlice({
   name: 'rnm',
   initialState: {
+    isLoading : false, 
     page : 1,
     characters : [],
-    isLoading : false, 
+    character : ""
   },
 
   reducers: {
@@ -14,13 +15,17 @@ export const rnmSlice = createSlice({
     },
 
     setCharacters: (state, action) => {
-      console.log(action);
       state.isLoading = false;
       state.page = action.payload.page;
       state.characters = action.payload.characters
+    },
+    setCharacter: (state, action) => {
+      state.isLoading = false;
+      state.character = action.payload.character
+      
     }
   },
 })
-
+  
 // Action creators are generated for each case reducer function
-export const { startLoadingCharacters, setCharacters } = rnmSlice.actions
+export const { startLoadingCharacters, setCharacters, setCharacter } = rnmSlice.actions
