@@ -8,7 +8,6 @@ export const ItemDetail = () => {
   const dispatch = useDispatch();
   
   let { isLoading, character } = useSelector((state) => state.rnm);
-
   const { id } = useParams();
   
   useEffect(() => {

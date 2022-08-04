@@ -8,6 +8,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getCharacters, setCharacters } from "../store/slices/rickandmorty"
 import MediaCard from './visualComps/MediaCard';
+import Button from '@mui/material/Button';
 
 
 const pages = ['Home', 'Characters', 'About'];
@@ -49,6 +50,18 @@ export const Album = () => {
                 <MediaCard character = {character} />
               </Grid>
             ))}
+            <Button
+              onClick={() => dispatch (getCharacters(page-1))}
+              variant="contained"
+            >
+              Previous page
+            </Button>
+            <Button
+              onClick={() => dispatch (getCharacters(page+1))}
+              variant="contained"
+            >
+              Next page
+            </Button>
           </Grid>
         </Container>
       </main>

@@ -15,10 +15,8 @@ export const getCharacter = ( id ) => {
     return async( dispatch, getState ) => {
         dispatch( startLoadingCharacters() );
         
-        // const { data } = await characterApi.get(`character/${id}`)
-
-        const  data  = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-
+        const { data } = await characterApi.get(`character/${id}`)
+        
         console.log("Asi llega axios", data);
 
         dispatch( setCharacter({ character: data}));
