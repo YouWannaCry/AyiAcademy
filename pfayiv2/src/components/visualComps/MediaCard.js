@@ -37,7 +37,6 @@ export default function MediaCard({character}) {
                     <Link to={`/character/${character.id}`}>
                       <Button size="small">View</Button>
                     </Link>
-                    <Button size="small">Edit</Button>
                   </CardActions>
                 </Card>
   );

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect,cleanDetail } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getCharacter } from "../store/slices/rickandmorty";
@@ -9,14 +9,17 @@ export const ItemDetail = () => {
   
   let { isLoading, character } = useSelector((state) => state.rnm);
   const { id } = useParams();
-  
+
   useEffect(() => {
     dispatch(getCharacter(id));
+    // return () => {
+    //   dispatch(cleanDetail())
+    // }
   }, [dispatch, id]);
 
   return (
     <section>
-      {character && (
+      {isLoading && (
         <Container fixed sx={{ paddingTop: 12, paddingBottom: 4 }}>
           <Grid container>
             <ItemDetail

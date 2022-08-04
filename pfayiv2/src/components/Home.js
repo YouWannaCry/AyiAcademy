@@ -3,6 +3,6 @@ import rnm from "./img/rnm.jpg"
 
 export function Home() {
   return (
-    <img src={rnm} width="1765" height="882"/>
+    <img src={rnm} width="1700" height="882"/>
   );
 }
